@@ -102,6 +102,7 @@ body {
     justify-content: space-between;
 }
 
+/* 元の backButton / nextButton は残すが nav-button が上書きする */
 .backButton, .nextButton {
     background-color: #2f6f4f;
     color: white;
@@ -120,8 +121,9 @@ body {
 }
 
 .itemTitle {
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 /* =========================================================
@@ -200,25 +202,20 @@ body {
     left: 20px;
     z-index: 1000;
 }
-.itemTitle {
-    font-size: 1.5rem;   /* ← 好きな大きさに調整できる */
-    font-weight: bold;   /* 太字にすると見やすい */
-    margin-bottom: 6px;  /* 少し余白をつけると綺麗 */
-}
-.nav-button {
-  font-size: 24px;          /* さらに大きく */
-  padding: 20px 28px;       /* タップ領域を大幅アップ */
-  margin: 16px auto;        /* 余白も広げる */
-  border-radius: 14px;      /* 角丸も少し大きく */
-  background-color: #007bff;
-  color: white;
-  border: none;
-  width: 95%;               /* 画面ほぼいっぱいに */
-  max-width: 380px;         /* 横幅の上限も拡大 */
-  display: block;
-  text-align: center;
-}
 
-.nav-button:active {
-  background-color: #0056b3;
+/* =========================================================
+   ■ nav-button（巨大ボタン・最優先）
+   ========================================================= */
+.nav-button {
+    font-size: 28px !important;
+    padding: 26px 32px !important;
+    margin: 20px auto !important;
+    border-radius: 18px !important;
+    background-color: #2f6f4f !important;
+    color: white !important;
+    border: none !important;
+    width: 95% !important;
+    max-width: 420px !important;
+    display: block !important;
+    text-align: center !important;
 }
