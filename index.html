@@ -16,7 +16,7 @@
 
     <!-- トップ画面 -->
     <div id="topScreen" class="screen">
-        <button class="nav-button" onclick="goToStartScreen()">タイトルへ</button>
+        <button class="backButton nav-button" onclick="goToStartScreen()">タイトルへ</button>
 
         <h2 class="subtitle">お題を選択してください</h2>
 
@@ -41,8 +41,8 @@
         <input id="studentCount" type="number" min="1" max="20" class="inputBox" placeholder="例：8">
 
         <div class="bottomButtons">
-            <button class="nav-button" onclick="backToTop()">戻る</button>
-            <button class="nav-button" onclick="goToNameInput()">次へ</button>
+            <button class="backButton nav-button" onclick="backToTop()">戻る</button>
+            <button class="nextButton nav-button" onclick="goToNameInput()">次へ</button>
         </div>
     </div>
 
@@ -53,8 +53,8 @@
         <div id="nameList"></div>
 
         <div class="bottomButtons">
-            <button class="nav-button" onclick="backToCount()">戻る</button>
-            <button class="nav-button" onclick="goToCheck()">次へ</button>
+            <button class="backButton nav-button" onclick="backToCount()">戻る</button>
+            <button class="nextButton nav-button" onclick="goToCheck()">次へ</button>
         </div>
     </div>
 
@@ -67,8 +67,8 @@
         <div id="checkItems"></div>
 
         <div class="bottomButtons">
-            <button class="nav-button" onclick="backToPreviousTopic()">戻る</button>
-            <button class="nav-button" onclick="saveAndNext()">次へ</button>
+            <button class="backButton nav-button" onclick="backToPreviousTopic()">戻る</button>
+            <button class="nextButton nav-button" onclick="saveAndNext()">次へ</button>
         </div>
     </div>
 
