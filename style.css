@@ -206,19 +206,19 @@ body {
     margin-bottom: 6px;  /* 少し余白をつけると綺麗 */
 }
 .nav-button {
-  font-size: 20px;          /* 文字を大きく */
-  padding: 14px 24px;       /* タップ領域を広く */
-  margin: 12px auto;        /* 上下に余白＋中央寄せ */
-  border-radius: 12px;      /* 角丸で押しやすい */
+  font-size: 24px;          /* さらに大きく */
+  padding: 20px 28px;       /* タップ領域を大幅アップ */
+  margin: 16px auto;        /* 余白も広げる */
+  border-radius: 14px;      /* 角丸も少し大きく */
   background-color: #007bff;
   color: white;
   border: none;
-  width: 90%;               /* スマホで押しやすい幅 */
-  max-width: 320px;         /* 大きくなりすぎないように */
+  width: 95%;               /* 画面ほぼいっぱいに */
+  max-width: 380px;         /* 横幅の上限も拡大 */
   display: block;
   text-align: center;
 }
 
 .nav-button:active {
-  background-color: #0056b3; /* 押した時の反応 */
+  background-color: #0056b3;
 }
