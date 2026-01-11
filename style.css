@@ -1,0 +1,207 @@
+/* =========================================================
+   ■ 全体の背景と基本設定
+   ========================================================= */
+body {
+    background-color: #e8f7f0;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* =========================================================
+   ■ 画面切り替え
+   ========================================================= */
+.screen {
+    display: none;
+    padding: 40px;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* =========================================================
+   ■ タイトル・サブタイトル
+   ========================================================= */
+.title {
+    font-size: 48px;
+    color: #2f6f4f;
+    margin-top: 120px;
+}
+
+.subtitle {
+    font-size: 28px;
+    color: #2f6f4f;
+    margin-bottom: 30px;
+}
+
+/* =========================================================
+   ■ メインボタン
+   ========================================================= */
+.mainButton {
+    background-color: #2f6f4f;
+    color: white;
+    padding: 18px 40px;
+    font-size: 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   ■ メニュー画面のボタン
+   ========================================================= */
+.menu {
+    margin-top: 20px;
+}
+
+.menuButton {
+    width: 80%;
+    background-color: white;
+    border: 2px solid #8ac7a3;
+    color: #2f6f4f;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.menuButton:hover {
+    background-color: #d8f0e3;
+}
+
+/* =========================================================
+   ■ 入力欄（名前入力など）
+   ========================================================= */
+.inputBox {
+    width: 60%;
+    padding: 12px;
+    font-size: 20px;
+    border: 2px solid #8ac7a3;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.nameRow {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #2f6f4f;
+}
+
+/* =========================================================
+   ■ 下部の「戻る」「次へ」ボタン
+   ========================================================= */
+.bottomButtons {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.backButton, .nextButton {
+    background-color: #2f6f4f;
+    color: white;
+    padding: 14px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   ■ 項目ブロック
+   ========================================================= */
+.itemBlock {
+    margin-bottom: 30px;
+}
+
+.itemTitle {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   ■ 名前＋チェック（A方式：縦セット）
+   ========================================================= */
+.checksRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.checkCell {
+    width: 120px;
+    text-align: center;
+}
+
+.checkName {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #2f6f4f;
+}
+
+.checkBox {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #333;
+    margin: 0 auto;
+    background-color: white;
+    cursor: pointer;
+}
+
+.checkBox.on {
+    background-color: #6fdc6f;
+}
+
+/* =========================================================
+   ■ 備考欄（均等幅）
+   ========================================================= */
+.notesRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.noteCell {
+    width: 180px;
+    text-align: left;
+}
+
+.noteArea {
+    width: 100%;
+    min-height: 2.5em;
+    resize: vertical;
+}
+
+.notesLabel {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* =========================================================
+   ■ 完了画面
+   ========================================================= */
+#finishScreen .mainButton {
+    margin-top: 100px;
+}
+
+/* =========================================================
+   ■ スタート画面の戻るボタン
+   ========================================================= */
+.startBackButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+.itemTitle {
+    font-size: 1.5rem;   /* ← 好きな大きさに調整できる */
+    font-weight: bold;   /* 太字にすると見やすい */
+    margin-bottom: 6px;  /* 少し余白をつけると綺麗 */
+}
