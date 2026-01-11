@@ -219,3 +219,28 @@ body {
     display: block !important;
     text-align: center !important;
 }
+/* =========================================================
+   ■ スマホだけ nav-button を巨大化（PCは普通サイズ）
+   ========================================================= */
+@media (max-width: 768px) {
+  .nav-button {
+    font-size: 28px !important;
+    padding: 26px 32px !important;
+    margin: 20px auto !important;
+    border-radius: 18px !important;
+    width: 95% !important;
+    max-width: 420px !important;
+  }
+}
+
+/* PC（768px以上）は控えめサイズに戻す */
+@media (min-width: 769px) {
+  .nav-button {
+    font-size: 20px !important;
+    padding: 14px 20px !important;
+    margin: 12px auto !important;
+    border-radius: 10px !important;
+    width: 60% !important;
+    max-width: 500px !important;
+  }
+}
