@@ -205,3 +205,20 @@ body {
     font-weight: bold;   /* 太字にすると見やすい */
     margin-bottom: 6px;  /* 少し余白をつけると綺麗 */
 }
+.nav-button {
+  font-size: 20px;          /* 文字を大きく */
+  padding: 14px 24px;       /* タップ領域を広く */
+  margin: 12px auto;        /* 上下に余白＋中央寄せ */
+  border-radius: 12px;      /* 角丸で押しやすい */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 90%;               /* スマホで押しやすい幅 */
+  max-width: 320px;         /* 大きくなりすぎないように */
+  display: block;
+  text-align: center;
+}
+
+.nav-button:active {
+  background-color: #0056b3; /* 押した時の反応 */
+}
