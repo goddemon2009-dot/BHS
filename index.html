@@ -4,35 +4,35 @@
     <meta charset="UTF-8">
     <title>10BHS</title>
     <link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 
     <!-- スタート画面 -->
     <div id="startScreen" class="screen active">
         <h1 class="title">10BHS</h1>
-        <button class="mainButton" onclick="goToTop()">はじめる</button>
+        <button class="mainButton nav-button" onclick="goToTop()">はじめる</button>
     </div>
 
-<!-- トップ画面 -->
-<div id="topScreen" class="screen">
-<button class="backButton startBackButton" onclick="goToStartScreen()">タイトルへ</button>
+    <!-- トップ画面 -->
+    <div id="topScreen" class="screen">
+        <button class="nav-button" onclick="goToStartScreen()">タイトルへ</button>
 
-    <h2 class="subtitle">お題を選択してください</h2>
+        <h2 class="subtitle">お題を選択してください</h2>
 
-    <div class="menu">
-        <button class="menuButton" onclick="selectTopic(1)">1　頭皮</button>
-        <button class="menuButton" onclick="selectTopic(2)">2　耳（日本手ぬぐい）</button>
-        <button class="menuButton" onclick="selectTopic(3)">3　頭</button>
-        <button class="menuButton" onclick="selectTopic(4)">4　口の中</button>
-        <button class="menuButton" onclick="selectTopic(5)">5　からだのまえ</button>
-        <button class="menuButton" onclick="selectTopic(6)">6　おなかをゆるめる</button>
-        <button class="menuButton" onclick="selectTopic(7)">7　てのひら</button>
-        <button class="menuButton" onclick="selectTopic(8)">8　あしのゆびとあしのうら</button>
-        <button class="menuButton" onclick="selectTopic(9)">9　からだのうしろ</button>
-        <button class="menuButton" onclick="selectTopic(10)">10　ふとももとおしり</button>
+        <div class="menu">
+            <button class="menuButton nav-button" onclick="selectTopic(1)">1　頭皮</button>
+            <button class="menuButton nav-button" onclick="selectTopic(2)">2　耳（日本手ぬぐい）</button>
+            <button class="menuButton nav-button" onclick="selectTopic(3)">3　頭</button>
+            <button class="menuButton nav-button" onclick="selectTopic(4)">4　口の中</button>
+            <button class="menuButton nav-button" onclick="selectTopic(5)">5　からだのまえ</button>
+            <button class="menuButton nav-button" onclick="selectTopic(6)">6　おなかをゆるめる</button>
+            <button class="menuButton nav-button" onclick="selectTopic(7)">7　てのひら</button>
+            <button class="menuButton nav-button" onclick="selectTopic(8)">8　あしのゆびとあしのうら</button>
+            <button class="menuButton nav-button" onclick="selectTopic(9)">9　からだのうしろ</button>
+            <button class="menuButton nav-button" onclick="selectTopic(10)">10　ふとももとおしり</button>
+        </div>
     </div>
-</div>
 
     <!-- 人数入力画面 -->
     <div id="countScreen" class="screen">
@@ -41,8 +41,8 @@
         <input id="studentCount" type="number" min="1" max="20" class="inputBox" placeholder="例：8">
 
         <div class="bottomButtons">
-            <button class="backButton" onclick="backToTop()">戻る</button>
-            <button class="nextButton" onclick="goToNameInput()">次へ</button>
+            <button class="nav-button" onclick="backToTop()">戻る</button>
+            <button class="nav-button" onclick="goToNameInput()">次へ</button>
         </div>
     </div>
 
@@ -53,12 +53,13 @@
         <div id="nameList"></div>
 
         <div class="bottomButtons">
-            <button class="backButton" onclick="backToCount()">戻る</button>
-            <button class="nextButton" onclick="goToCheck()">次へ</button>
+            <button class="nav-button" onclick="backToCount()">戻る</button>
+            <button class="nav-button" onclick="goToCheck()">次へ</button>
         </div>
     </div>
 
     <script src="script.js"></script>
+
     <!-- チェック画面 -->
     <div id="checkScreen" class="screen">
         <h2 id="topicTitle" class="subtitle"></h2>
@@ -66,16 +67,16 @@
         <div id="checkItems"></div>
 
         <div class="bottomButtons">
-            <button class="backButton" onclick="backToPreviousTopic()">戻る</button>
-            <button class="nextButton" onclick="saveAndNext()">次へ</button>
+            <button class="nav-button" onclick="backToPreviousTopic()">戻る</button>
+            <button class="nav-button" onclick="saveAndNext()">次へ</button>
         </div>
     </div>
-    <!-- 保存完了画面 -->
- <div id="finishScreen" class="screen">
-    <h2 class="subtitle">保存が完了しました</h2>
-    <button class="mainButton" onclick="goToTop()">トップへ戻る</button>
-</div>
 
+    <!-- 保存完了画面 -->
+    <div id="finishScreen" class="screen">
+        <h2 class="subtitle">保存が完了しました</h2>
+        <button class="mainButton nav-button" onclick="goToTop()">トップへ戻る</button>
     </div>
+
 </body>
 </html>
