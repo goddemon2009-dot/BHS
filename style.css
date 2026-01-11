@@ -102,7 +102,6 @@ body {
     justify-content: space-between;
 }
 
-/* 元の backButton / nextButton は残すが nav-button が上書きする */
 .backButton, .nextButton {
     background-color: #2f6f4f;
     color: white;
@@ -138,7 +137,7 @@ body {
 
 .checkCell {
     width: 120px;
-    text-align: center;
+    texttext-align: center;
 }
 
 .checkName {
@@ -219,30 +218,29 @@ body {
     display: block !important;
     text-align: center !important;
 }
+
 /* =========================================================
-   ■ スマホ（768px以下）：巨大ボタン
+   ■ スマホ・タブレット（1023px以下）：巨大ボタン
    ========================================================= */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .nav-button {
     font-size: 28px !important;
     padding: 26px 32px !important;
-    margin: 20px auto !important;
-    border-radius: 18px !important;
     width: 95% !important;
     max-width: 420px !important;
   }
 }
 
 /* =========================================================
-   ■ PC（769px以上）：かなり小さめの控えめボタン
+   ■ PC（1024px以上）：小さめボタン
    ========================================================= */
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .nav-button {
-    font-size: 14px !important;      /* ← かなり小さい */
-    padding: 8px 12px !important;    /* ← 3段階くらい縮小 */
+    font-size: 14px !important;
+    padding: 8px 12px !important;
     margin: 8px auto !important;
     border-radius: 6px !important;
-    width: 40% !important;           /* ← PCでは細めに */
-    max-width: 260px !important;     /* ← かなり小さめ */
+    width: 40% !important;
+    max-width: 260px !important;
   }
 }
