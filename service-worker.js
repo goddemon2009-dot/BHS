@@ -1,4 +1,4 @@
-const CACHE_NAME = "10bhs-cache-v2";
+const CACHE_NAME = "10bhs-cache-v3";
 const urlsToCache = [
   "./",
   "./index.html",
