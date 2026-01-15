@@ -90,17 +90,23 @@ body {
     color: #2f6f4f;
 }
 
-/* =========================================================
-   ■ 下部の「戻る」「次へ」ボタン
-   ========================================================= */
-.bottomButtons {
+ /* =========================================================
+    ■ 下部の「戻る」「次へ」ボタン
+    ========================================================= */
+ .bottomButtons {
     position: fixed;
     bottom: 20px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
+    position: static; /* ← 通常配置に戻す */
+    margin-top: 40px;
+     display: flex;
+    justify-content: space-between;
+ }
+
+
 
 .backButton, .nextButton {
     background-color: #2f6f4f;
@@ -137,7 +143,7 @@ body {
 
 .checkCell {
     width: 120px;
-    texttext-align: center;
+    text-align: center;
 }
 
 .checkName {
@@ -196,10 +202,8 @@ body {
    ■ スタート画面の戻るボタン
    ========================================================= */
 .startBackButton {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000;
+    position: static;
+    margin-top: 40px;
 }
 
 /* =========================================================

@@ -2,7 +2,7 @@
    ■ グローバル変数
    ========================================================= */
 let allResults = [];      // 全お題の結果を保存
-let selectedTopic = null; // 現在のお題番号
+let selectedTopic = 1; // 現在のお題番号
 let studentCount = 0;     // 受験者数
 let studentNames = [];    // 受験者名リスト
 
@@ -16,7 +16,7 @@ function goToTop() {
 
     // ★ 完全初期化（次の受験者のためにまっさらにする）
     allResults = [];
-    selectedTopic = null;
+    selectedTopic = 1;
     studentCount = 0;
     studentNames = [];
 
@@ -79,9 +79,13 @@ function goToCheck() {
         studentNames.push(name);
     }
 
-    generateCheckScreen();
-    showScreen("checkScreen");
+-    generateCheckScreen();
+-    showScreen("checkScreen");
+
++    showScreen("checkScreen");   // 先に画面を表示
++    generateCheckScreen();       // その後に内容を描画（ボタンも書き換わる）
 }
+
 
 
 /* =========================================================
@@ -116,7 +120,7 @@ function showScreen(id) {
 const topicNames = {
     1: "頭皮",
     2: "耳（日本手ぬぐい）",
-    3: "頭",
+    3: "顔",
     4: "口の中",
     5: "からだのまえ",
     6: "おなかをゆるめる",
@@ -213,6 +217,9 @@ const topics = {
    ■ チェック画面の生成（入力保持版）
    ========================================================= */
 function generateCheckScreen() {
+    console.log("selectedTopic =", selectedTopic);
+console.log("items =", items);
+
     const items = topics[selectedTopic];
     const topicName = topicNames[selectedTopic];
 
@@ -272,18 +279,34 @@ function generateCheckScreen() {
                 </div>
             `;
         });
-html += `
-    <div class="itemNextButton">
-        <button class="nextButton nav-button" onclick="saveAndNext()">次の項目へ</button>
-    </div>
-`;
+
 
 
         html += `</div></div><hr>`;
     });
 
     document.getElementById("checkItems").innerHTML = html;
+
+
+// ★ ここに追加する（ボタンのラベル切り替え）
+const backBtn = document.querySelector(".backButton");
+const nextBtn = document.querySelector(".nextButton");
+
+// 項目1 → 「前の画面へ」
+if (selectedTopic === 1) {
+    backBtn.textContent = "前の画面へ";
+} else {
+    backBtn.textContent = "前の項目へ";
 }
+
+// 項目10 → 「完了」
+if (selectedTopic === 10) {
+    nextBtn.textContent = "完了";
+} else {
+    nextBtn.textContent = "次の項目へ";
+}
+}
+
 
 
 /* =========================================================
