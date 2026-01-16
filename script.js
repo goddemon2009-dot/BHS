@@ -78,6 +78,7 @@ function goToCheck() {
         const name = document.getElementById(`name${i}`).value || `受験生${i}`;
         studentNames.push(name);
     }
+   selectedTopic = 1;  // ← これが絶対必要！
 
 -    generateCheckScreen();
 -    showScreen("checkScreen");
