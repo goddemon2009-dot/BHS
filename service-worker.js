@@ -9,8 +9,3 @@ self.addEventListener("activate", event => {
   clients.claim();
 });
 
-// fetch を横取りしない（キャッシュもしない）
-self.addEventListener("fetch", event => {
-  // 何もしない
-});
-
