@@ -1,3 +1,19 @@
+window.addEventListener("load", () => {
+    const savedVersion = localStorage.getItem("app_version");
+
+    if (savedVersion !== APP_VERSION) {
+        localStorage.setItem("app_version", APP_VERSION);
+
+        if ('caches' in window) {
+            caches.keys().then(function(names) {
+                for (let name of names) caches.delete(name);
+            });
+        }
+
+        location.reload(true);
+    }
+});
+
 /* =========================================================
    ■ グローバル変数
    ========================================================= */
@@ -143,7 +159,7 @@ const topics = {
         "スタートの位置があっている(人差し指で耳の付け根)",
         "耳の付け根を剥がすイメージで、耳の後ろの周りをくるくるとマッサージする",
         "耳の一番下のところに人差し指をあてて、頭頂にむかって持ち上げる(頭がまっすぐになっている)",
-        "人差し指で、耳の溝を最後に耳の穴を洗う感じでマッサージする",
+        "人差し指で、耳のみぞを最後に耳の穴を洗う感じでマッサージする",
         "親指と中指で、上、真ん中、下の3方向に引っ張る",
         "終わりの位置があっている"
     ],
