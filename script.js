@@ -1,6 +1,5 @@
-window.addEventListener("load", () => {
+navigator.serviceWorker.ready.then(() => {
     const savedVersion = localStorage.getItem("app_version");
-
     if (savedVersion !== APP_VERSION) {
         localStorage.setItem("app_version", APP_VERSION);
 
@@ -13,6 +12,7 @@ window.addEventListener("load", () => {
         location.reload(true);
     }
 });
+
 
 /* =========================================================
    ■ グローバル変数
