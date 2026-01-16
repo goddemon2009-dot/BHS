@@ -219,9 +219,9 @@ const topics = {
    ========================================================= */
 function generateCheckScreen() {
     console.log("selectedTopic =", selectedTopic);
+        const items = topics[selectedTopic];
 console.log("items =", items);
 
-    const items = topics[selectedTopic];
     const topicName = topicNames[selectedTopic];
 
     let html = `<h2 class="subtitle">【${topicName}】</h2>`;
