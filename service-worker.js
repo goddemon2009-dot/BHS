@@ -1,27 +1,16 @@
-const CACHE_NAME = "10bhs-cache-v4";
-const urlsToCache = [
-  "./",
-  "./index.html",
-  "./style.css",
-  "./script.js",
-  "./icon-192.png",
-  "./icon-512.png"
-];
-
-// インストール時にキャッシュ
+// ★ オフライン機能なし・キャッシュなしの安全版 SW
 self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache);
-    })
-  );
+  // すぐに新しいSWを有効化
+  self.skipWaiting();
 });
 
-// オフライン時はキャッシュを返す
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener("activate", event => {
+  // 古いSWを即座に置き換え
+  clients.claim();
 });
+
+// fetch を横取りしない（キャッシュもしない）
+self.addEventListener("fetch", event => {
+  // 何もしない
+});
+
