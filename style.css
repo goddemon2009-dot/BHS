@@ -7,14 +7,15 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    color: #333;
 }
 
-/* =========================================================
-   ■ 画面切り替え
-   ========================================================= */
+/* 画面切り替え */
 .screen {
     display: none;
-    padding: 40px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .screen.active {
@@ -22,61 +23,73 @@ body {
 }
 
 /* =========================================================
-   ■ タイトル・サブタイトル
+   ■ タイトル・テキスト系
    ========================================================= */
 .title {
-    font-size: 48px;
+    font-size: 40px;
     color: #2f6f4f;
-    margin-top: 120px;
+    margin: 80px 0 40px;
 }
 
 .subtitle {
-    font-size: 28px;
+    font-size: 24px;
     color: #2f6f4f;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /* =========================================================
-   ■ メインボタン
+   ■ ボタン基本設定
    ========================================================= */
-.mainButton {
-    background-color: #2f6f4f;
-    color: white;
-    padding: 18px 40px;
-    font-size: 22px;
+.mainButton, .menuButton, .backButton, .nextButton, .checkButton {
+    cursor: pointer;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
+    transition: 0.2s;
+    font-size: 18px;
+    padding: 12px 20px;
 }
 
-/* =========================================================
-   ■ メニュー画面のボタン
-   ========================================================= */
-.menu {
-    margin-top: 20px;
+/* メイン（緑） */
+.mainButton, .nextButton, .checkButton {
+    background-color: #2f6f4f;
+    color: white;
 }
 
+/* メニュー用（白背景） */
 .menuButton {
-    width: 80%;
+    width: 90%;
+    max-width: 400px;
     background-color: white;
     border: 2px solid #8ac7a3;
     color: #2f6f4f;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 10px;
     margin: 8px 0;
-    cursor: pointer;
 }
 
 .menuButton:hover {
     background-color: #d8f0e3;
 }
 
+/* 共通ナビゲーションボタン（幅広） */
+.nav-button {
+    width: 85%;
+    max-width: 360px;
+    margin: 10px auto;
+}
+
+/* 下部ボタン配置 */
+.bottomButtons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 /* =========================================================
-   ■ 入力欄（名前入力など）
+   ■ 入力・チェック項目
    ========================================================= */
 .inputBox {
-    width: 60%;
+    width: 80%;
+    max-width: 400px;
     padding: 12px;
     font-size: 20px;
     border: 2px solid #8ac7a3;
@@ -84,65 +97,17 @@ body {
     margin: 10px 0;
 }
 
-.nameRow {
-    margin: 10px 0;
-    font-size: 20px;
-    color: #2f6f4f;
-}
-
- /* =========================================================
-    ■ 下部の「戻る」「次へ」ボタン
-    ========================================================= */
- .bottomButtons {
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    position: static; /* ← 通常配置に戻す */
-    margin-top: 40px;
-     display: flex;
-    justify-content: space-between;
- }
-
-
-
-.backButton, .nextButton {
-    background-color: #2f6f4f !important;
-    color: white !important;
-    padding: 10px 16px;
-    font-size: 16px;
-    border: none !important;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* =========================================================
-   ■ 項目ブロック
-   ========================================================= */
-.itemBlock {
-    margin-bottom: 30px;
-}
-
-.itemTitle {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-/* =========================================================
-   ■ 名前＋チェック（A方式：縦セット）
-   ========================================================= */
+/* チェックセル（縦並びセット） */
 .checksRow {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
+    justify-content: center;
     margin-bottom: 15px;
 }
 
 .checkCell {
-    width: 120px;
+    width: 100px;
     text-align: center;
 }
 
@@ -154,106 +119,90 @@ body {
 }
 
 .checkBox {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #333;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #2f6f4f;
+    background-color: white;
     margin: 0 auto;
-    background-color: #ffffff !important;
-
     cursor: pointer;
+    border-radius: 6px;
 }
 
 .checkBox.on {
     background-color: #6fdc6f !important;
 }
 
-/* =========================================================
-   ■ 備考欄（均等幅）
-   ========================================================= */
+/* 備考欄 */
 .notesRow {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
+    justify-content: center;
 }
 
 .noteCell {
-    width: 180px;
+    width: 45%;
+    min-width: 150px;
     text-align: left;
+    font-size: 14px;
 }
 
 .noteArea {
     width: 100%;
-    min-height: 2.5em;
-    resize: vertical;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
-.notesLabel {
+.itemBlock {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.itemTitle {
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    color: #2f6f4f;
 }
 
 /* =========================================================
-   ■ 完了画面
+   ■ 完了画面（finishScreen）
    ========================================================= */
-#finishScreen .mainButton {
-    margin-top: 100px;
-}
-
-/* =========================================================
-   ■ スタート画面の戻るボタン
-   ========================================================= */
-.startBackButton {
-    position: static;
+.finishActions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
     margin-top: 40px;
 }
-/* =========================================================
-   ■ nav-button（基本サイズ）
-   ========================================================= */
-.nav-button {
-    font-size: 18px !important;
-    padding: 12px 16px !important;
-    margin: 12px auto !important;
-    border-radius: 10px !important;
-    width: 85% !important;
-    max-width: 360px !important;
+
+.excelButton {
+    background-color: #28a745 !important; /* 緑色 */
+    width: 80%;
+    max-width: 300px;
+}
+
+.titleReturnButton {
+    background-color: #6c757d !important; /* グレー */
+    width: 80%;
+    max-width: 300px;
 }
 
 /* =========================================================
-   ■ スマホ・タブレット（1023px以下）
-   ========================================================= */
-@media (max-width: 1023px) {
-  .nav-button {
-    font-size: 18px !important;
-    padding: 12px 16px !important;
-    width: 85% !important;
-    max-width: 360px !important;
-  }
-}
-
-/* =========================================================
-   ■ PC（1024px以上）：小さめボタン
+   ■ PC表示（1024px以上）の調整
    ========================================================= */
 @media (min-width: 1024px) {
-  .nav-button {
-    font-size: 14px !important;
-    padding: 8px 12px !important;
-    margin: 8px auto !important;
-    border-radius: 6px !important;
-    width: 40% !important;
-    max-width: 260px !important;
-  }
+    .nav-button {
+        width: 30% !important;
+    }
+    
+    .noteCell {
+        width: 30%;
+    }
 }
-/* =========================================================
-   ■ チェックボタン
-   ========================================================= */
-.checkButton {
-    background-color: #2f6f4f !important;
-    color: white !important;
-    padding: 10px 16px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-
