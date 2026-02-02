@@ -59,7 +59,7 @@ window.addEventListener("load", () => {
    ========================================================= */
 
 function goToTop() {
-    // タイトルへ戻るときにバックアップを削除
+    // タイトル（初期状態）へ戻る際にデータをクリア
     localStorage.removeItem("bhs_app_backup");
     allResults = [];
     selectedTopic = 1;
@@ -73,7 +73,7 @@ function goToTop() {
     const checkItems = document.getElementById("checkItems");
     if (checkItems) checkItems.innerHTML = "";
 
-    showScreen("startScreen");
+    showScreen("topScreen");
 }
 
 function goToStartScreen() {
@@ -81,12 +81,6 @@ function goToStartScreen() {
     saveAppState();
 }
 
-// お題選択画面を表示（はじめるボタン押下時）
-function goToTopMenu() {
-    showScreen("topScreen");
-}
-
-// お題を選んだとき
 function selectTopic(num) {
     selectedTopic = num;
     showScreen("countScreen");
@@ -153,26 +147,16 @@ function backToPreviousTopic() {
     }
 }
 
+/* =========================================================
+   ■ 画面切り替え共通処理
+   ========================================================= */
 function showScreen(id) {
     document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
     const target = document.getElementById(id);
-    if (target) target.classList.add("active");
-}
-
-// goToTop()でstartScreenに行くよう修正したので、はじめるボタンの遷移先を整理
-function goToTop() {
-    localStorage.removeItem("bhs_app_backup");
-    allResults = [];
-    selectedTopic = 1;
-    studentCount = 0;
-    studentNames = [];
-    const countInput = document.getElementById("studentCount");
-    if (countInput) countInput.value = "";
-    const nameList = document.getElementById("nameList");
-    if (nameList) nameList.innerHTML = "";
-    const checkItems = document.getElementById("checkItems");
-    if (checkItems) checkItems.innerHTML = "";
-    showScreen("topScreen");
+    if (target) {
+        target.classList.add("active");
+        window.scrollTo(0, 0); // 画面遷移時に一番上へスクロール
+    }
 }
 
 /* =========================================================
@@ -202,11 +186,12 @@ const topics = {
 function generateCheckScreen() {
     const items = topics[selectedTopic];
     const topicName = topicNames[selectedTopic];
-    let html = `<h2 class="subtitle">【${topicName}】</h2>`;
+    // ★ 見出しに番号を追加
+    let html = `<h2 class="subtitle">【${selectedTopic}：${topicName}】</h2>`;
 
     items.forEach((item, itemIndex) => {
         html += `<div class="itemBlock">
-            <div class="itemTitle">【${topicName}：項目${itemIndex + 1}】${item}</div>
+            <div class="itemTitle">【${selectedTopic}${topicName} ：項目${itemIndex + 1}】${item}</div>
             <div class="checksRow">`;
 
         studentNames.forEach((name, studentIndex) => {
@@ -233,6 +218,7 @@ function generateCheckScreen() {
     });
 
     document.getElementById("checkItems").innerHTML = html;
+    window.scrollTo(0, 0); // お題切り替え時（次へ/戻る）も一番上へスクロール
 
     const backBtn = document.getElementById("checkBackBtn");
     const nextBtn = document.getElementById("checkNextBtn");
@@ -255,7 +241,6 @@ function saveAndNext() {
         generateCheckScreen();
         saveAppState();
     } else {
-        // 10番目の終了時は画面遷移のみ。自動保存はしない。
         showScreen("finishScreen");
         saveAppState(); 
     }
