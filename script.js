@@ -128,13 +128,20 @@ function goToCheck() {
     generateCheckScreen();
     saveAppState();
 }
-
 /* =========================================================
-   ■ 戻るボタン
+   ■ 戻るボタン（追加・修正）
    ========================================================= */
 function backToTop() { showScreen("topScreen"); saveAppState(); }
 function backToCount() { showScreen("countScreen"); saveAppState(); }
 function backToNameInput() { showScreen("nameScreen"); saveAppState(); }
+
+// 【新設】最終確認画面からお題10へ戻るための関数
+function backToTopic10() {
+    selectedTopic = 10;          // お題番号を10に設定
+    generateCheckScreen();      // お題10の画面を生成
+    showScreen("checkScreen");   // チェック画面を表示
+    saveAppState();             // 状態を保存
+}
 
 function backToPreviousTopic() {
     if (selectedTopic > 1) {
