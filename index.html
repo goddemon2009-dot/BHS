@@ -75,51 +75,7 @@
         </div>
     </div>
 
-    <script src="https://goddemon2009-dot.github.io/BHS/version.js"></script>
+    <script src="version.js"></script>
     <script src="script.js"></script>
-</body>
-</html>    </div>
-
-    <!-- 人数入力画面 -->
-    <div id="countScreen" class="screen">
-        <h2 class="subtitle">受験生の人数を入力</h2>
-        <input id="studentCount" type="number" min="1" max="20" class="inputBox" placeholder="例：8">
-        <div class="bottomButtons">
-            <button class="backButton nav-button" onclick="backToTop()">戻る</button>
-            <button class="nextButton nav-button" onclick="goToNameInput()">次へ</button>
-        </div>
-    </div>
-
-    <!-- 名前入力画面 -->
-    <div id="nameScreen" class="screen">
-        <h2 class="subtitle">受験生の名前を入力</h2>
-        <div id="nameList"></div>
-        <div class="bottomButtons">
-            <button class="backButton nav-button" onclick="backToCount()">戻る</button>
-            <button class="nextButton nav-button" onclick="goToCheck()">次へ</button>
-        </div>
-    </div>
-
-    <!-- チェック画面 -->
-    <div id="checkScreen" class="screen">
-        <div id="checkItems"></div>
-        <div class="bottomButtons">
-            <button id="checkBackBtn" class="backButton nav-button" onclick="backToPreviousTopic()">戻る</button>
-            <button id="checkNextBtn" class="nextButton nav-button" onclick="saveAndNext()">次へ</button>
-        </div>
-    </div>
-
-    <!-- 完了画面 -->
-    <div id="finishScreen" class="screen">
-        <h2 class="subtitle">エクセルに保存しますか。</h2>
-        <div class="finishActions">
-            <button class="mainButton excelButton" onclick="saveAllExcel()">エクセルに保存</button>
-            <button class="mainButton backButton" onclick="backToTopic10()">お題10に戻る</button>
-            <button class="mainButton titleReturnButton" onclick="goToTop()">タイトルへ戻る</button>
-        </div>
-    </div>
-
-<script src="version.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
