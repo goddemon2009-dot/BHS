@@ -1,10 +1,10 @@
 /* =========================================================
    ■ バージョン更新時のキャッシュクリア
-   ========================================================= */
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.ready
         .then(() => {
             const savedVersion = localStorage.getItem("app_version");
+
             if (typeof APP_VERSION !== "undefined" && savedVersion !== APP_VERSION) {
                 localStorage.setItem("app_version", APP_VERSION);
 
