@@ -85,9 +85,15 @@ function goToTop() {
     showScreen("topScreen");
 }
 
-function goToStartScreen() {
+// はじめるボタン用
+function goToStart() {
     showScreen("startScreen");
     saveAppState();
+}
+
+// 既存名でも動くようにしておく
+function goToStartScreen() {
+    goToStart();
 }
 
 function selectTopic(num) {
