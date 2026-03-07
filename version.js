@@ -1,2 +1,2 @@
 // version.js
-const APP_VERSION = new Date().getTime().toString();
+const APP_VERSION = "1.0.1";
