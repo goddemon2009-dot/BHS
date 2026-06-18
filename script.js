@@ -109,6 +109,10 @@ function clearInputViews() {
 }
 
 function goToTop() {
+    if (allResults.length > 0) {
+        const ok = confirm("エクセルに保存されていないデータがあります。\nタイトルに戻るとデータが消えます。よろしいですか？");
+        if (!ok) return;
+    }
     localStorage.removeItem("bhs_app_backup");
     allResults = [];
     selectedCategory = 1;
