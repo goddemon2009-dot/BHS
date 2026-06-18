@@ -1,6 +1,12 @@
 /* =========================================================
    ■ 全体の背景と基本設定
    ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #e8f7f0;
     font-family: sans-serif;
@@ -35,6 +41,212 @@ body {
     font-size: 24px;
     color: #2f6f4f;
     margin-bottom: 20px;
+}
+
+/* =========================================================
+   ■ ボタン基本設定
+   ========================================================= */
+.mainButton,
+.menuButton,
+.backButton,
+.nextButton,
+.checkButton {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: 0.2s;
+    font-size: 18px;
+    padding: 12px 20px;
+    display: block;
+}
+
+/* メイン（緑） */
+.mainButton,
+.nextButton,
+.checkButton {
+    background-color: #2f6f4f;
+    color: white;
+}
+
+/* 戻るボタン */
+.backButton {
+    background-color: white;
+    border: 2px solid #8ac7a3;
+    color: #2f6f4f;
+}
+
+/* メニュー用（白背景） */
+.menuButton {
+    width: 90%;
+    max-width: 400px;
+    background-color: white;
+    border: 2px solid #8ac7a3;
+    color: #2f6f4f;
+    margin: 8px auto;
+}
+
+.menuButton:hover,
+.backButton:hover {
+    background-color: #d8f0e3;
+}
+
+/* 共通ナビゲーションボタン（幅広） */
+.nav-button {
+    width: 85%;
+    max-width: 360px;
+    margin: 10px auto;
+}
+
+/* 下部ボタン配置 */
+.bottomButtons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =========================================================
+   ■ 入力・チェック項目
+   ========================================================= */
+.inputBox {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 20px;
+    border: 2px solid #8ac7a3;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* チェックセル（縦並びセット） */
+.checksRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.checkCell {
+    width: 100px;
+    text-align: center;
+}
+
+.checkName {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #2f6f4f;
+}
+
+.checkBox {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #2f6f4f;
+    background-color: white;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.checkBox.on {
+    background-color: #6fdc6f !important;
+}
+
+/* 備考欄 */
+.notesRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.noteCell {
+    width: 45%;
+    min-width: 150px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.noteArea {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.itemBlock {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.itemTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2f6f4f;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   ■ 完了画面（finishScreen）
+   ========================================================= */
+.finishActions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.excelButton {
+    background-color: #28a745 !important;
+    width: 80%;
+    max-width: 300px;
+}
+
+.titleReturnButton {
+    background-color: #6c757d !important;
+    width: 80%;
+    max-width: 300px;
+}
+
+/* =========================================================
+   ■ タブレット以上
+   ========================================================= */
+@media (min-width: 768px) {
+    .bottomButtons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .bottomButtons .backButton,
+    .bottomButtons .nextButton {
+        width: 260px;
+        max-width: 260px;
+    }
+}
+
+/* =========================================================
+   ■ PC表示（1024px以上）の調整
+   ========================================================= */
+@media (min-width: 1024px) {
+    .nav-button {
+        width: 30% !important;
+    }
+
+    .noteCell {
+        width: 30%;
+    }
+}    margin-bottom: 20px;
 }
 
 /* =========================================================
