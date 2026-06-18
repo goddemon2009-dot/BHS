@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>10BHS</title>
+    <title>BHSチェックリスト</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <link rel="manifest" href="manifest.json">
@@ -11,23 +11,17 @@
 <body>
 
     <div id="startScreen" class="screen active">
-        <h1 class="title">10BHS</h1>
+        <h1 class="title">BHSチェックリスト</h1>
         <button class="mainButton nav-button" onclick="goToTop()">はじめる</button>
     </div>
 
     <div id="topScreen" class="screen">
-        <h2 class="subtitle">お題を選択してください</h2>
+        <h2 class="subtitle">チェックリストを選択してください</h2>
         <div class="menu">
-            <button class="menuButton nav-button" onclick="selectTopic(1)">1　頭皮</button>
-            <button class="menuButton nav-button" onclick="selectTopic(2)">2　耳（日本手ぬぐい）</button>
-            <button class="menuButton nav-button" onclick="selectTopic(3)">3　顔</button>
-            <button class="menuButton nav-button" onclick="selectTopic(4)">4　口の中</button>
-            <button class="menuButton nav-button" onclick="selectTopic(5)">5　からだのまえ</button>
-            <button class="menuButton nav-button" onclick="selectTopic(6)">6　おなかをゆるめる</button>
-            <button class="menuButton nav-button" onclick="selectTopic(7)">7　てのひら</button>
-            <button class="menuButton nav-button" onclick="selectTopic(8)">8　あしのゆびとあしのうら</button>
-            <button class="menuButton nav-button" onclick="selectTopic(9)">9　からだのうしろ</button>
-            <button class="menuButton nav-button" onclick="selectTopic(10)">10　ふとももとおしり</button>
+            <button class="menuButton nav-button" onclick="selectCategory(1)">BHS基礎</button>
+            <button class="menuButton nav-button" onclick="selectCategory(2)">BHS歌</button>
+            <button class="menuButton nav-button" onclick="selectCategory(3)">BHS食と育ち</button>
+            <button class="menuButton nav-button" onclick="selectCategory(4)">BHS総合</button>
         </div>
         <div class="bottomButtons">
             <button class="backButton nav-button" onclick="goToStartScreen()">タイトルへ</button>
@@ -65,7 +59,7 @@
     <div class="finishActions">
         <button class="mainButton excelButton" onclick="saveAllExcel()">エクセルに保存</button>
         
-        <button class="mainButton backButton" onclick="backToTopic10()">お題10に戻る</button>
+        <button class="mainButton backButton" onclick="backToLastTopic()">最後のお題に戻る</button>
         
         <button class="mainButton titleReturnButton" onclick="goToTop()">タイトルへ戻る</button>
     </div>
