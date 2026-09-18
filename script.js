@@ -1,26 +1,23 @@
 /* =========================================================
    ■ バージョン更新時のキャッシュクリア
+   ※ このアプリはService Workerを登録していないため、
+     serviceWorker.ready待ちにすると永久に実行されない。
+     バージョン判定は即時に行う。
    ========================================================= */
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.ready
-        .then(() => {
-            const savedVersion = localStorage.getItem("app_version");
+if (typeof APP_VERSION !== "undefined") {
+    const savedVersion = localStorage.getItem("app_version");
 
-            if (typeof APP_VERSION !== "undefined" && savedVersion !== APP_VERSION) {
-                localStorage.setItem("app_version", APP_VERSION);
+    if (savedVersion !== APP_VERSION) {
+        localStorage.setItem("app_version", APP_VERSION);
 
-                if ("caches" in window) {
-                    caches.keys().then((names) => {
-                        for (const name of names) {
-                            caches.delete(name);
-                        }
-                    });
+        if ("caches" in window) {
+            caches.keys().then((names) => {
+                for (const name of names) {
+                    caches.delete(name);
                 }
-            }
-        })
-        .catch((err) => {
-            console.warn("serviceWorker.ready の取得に失敗:", err);
-        });
+            });
+        }
+    }
 }
 
 /* =========================================================
